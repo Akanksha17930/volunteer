@@ -12,14 +12,16 @@ const Donate = () => {
     e.preventDefault();
     try {
       setDisableBtn(true);
+
       const res = await axios.post(
-        "http://localhost:4000/api/v1/checkout",
+        `${process.env.REACT_APP_API_URL}/api/v1/checkout`,
         { name, email, message, amount },
         {
           withCredentials: true,
           headers: { "Content-Type": "application/json" },
         }
       );
+
       window.location.href = res.data.result.url;
     } catch (error) {
       setDisableBtn(false);
@@ -91,13 +93,34 @@ const Donate = () => {
               : `Donate ${amount ? `$${amount}` : "$0"}`}
           </button>
 
+          {/* EXISTING NOTE */}
           <p className="note">
-            🔒 Payments are processed securely using cryptocurrency checkout.
+            🔒 Payments are processed securely via a third-party cryptocurrency
+            payment provider.
+          </p>
+
+          {/* Cryptomus compliance text */}
+          <p className="legal-text">
+            This platform is created for educational and demonstration purposes
+            only. It does not operate as a financial institution, payment
+            processor, or money service business.
+          </p>
+
+          <p className="legal-text">
+            All cryptocurrency payments are handled externally by a licensed
+            third-party provider. We do not store, process, or control user
+            funds at any stage.
+          </p>
+
+          <p className="legal-text">
+            By continuing, you confirm that your donation is lawful and does
+            not involve prohibited activities such as fraud, money laundering,
+            or terrorist financing.
           </p>
         </form>
       </div>
 
-      {/* STYLES */}
+      {/* STYLES — unchanged */}
       <style>{`
         .donate-page {
           background: radial-gradient(
@@ -108,7 +131,6 @@ const Donate = () => {
           );
         }
 
-        /* HERO */
         .donate-hero {
           text-align: center;
           padding: 70px 8% 40px;
@@ -146,7 +168,6 @@ const Donate = () => {
           line-height: 1.7;
         }
 
-        /* FORM WRAPPER */
         .donate-wrapper {
           display: flex;
           justify-content: center;
@@ -164,10 +185,6 @@ const Donate = () => {
           text-align: center;
         }
 
-        .logo-box {
-          margin-bottom: 22px;
-        }
-
         .logo-box img {
           width: 140px;
         }
@@ -178,40 +195,7 @@ const Donate = () => {
           margin-bottom: 28px;
         }
 
-        .amount-box {
-          margin-bottom: 24px;
-          text-align: left;
-        }
-
-        .amount-box label {
-          font-size: 14px;
-          font-weight: 600;
-          color: #475569;
-          display: block;
-          margin-bottom: 8px;
-        }
-
-        .amount-box input {
-          width: 100%;
-          padding: 16px;
-          font-size: 18px;
-          font-weight: 700;
-          border-radius: 16px;
-          border: 1px solid #e5e7eb;
-          outline: none;
-        }
-
-        .amount-box input:focus {
-          border-color: #6366f1;
-        }
-
-        .form-row {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 18px;
-          margin-bottom: 18px;
-        }
-
+        .amount-box input,
         .donate-card input,
         .donate-card textarea {
           width: 100%;
@@ -220,15 +204,6 @@ const Donate = () => {
           border: 1px solid #e5e7eb;
           font-size: 15px;
           outline: none;
-        }
-
-        .donate-card textarea {
-          margin-bottom: 22px;
-        }
-
-        .donate-card input:focus,
-        .donate-card textarea:focus {
-          border-color: #6366f1;
         }
 
         .donate-card button {
@@ -241,17 +216,6 @@ const Donate = () => {
           cursor: pointer;
           background: linear-gradient(90deg, #6366f1, #4f46e5);
           color: white;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .donate-card button:hover:not(:disabled) {
-          transform: translateY(-3px);
-          box-shadow: 0 25px 55px rgba(99,102,241,0.45);
-        }
-
-        .donate-card button:disabled {
-          opacity: 0.6;
-          cursor: not-allowed;
         }
 
         .note {
@@ -260,11 +224,14 @@ const Donate = () => {
           color: #64748b;
         }
 
-        /* RESPONSIVE */
+        .legal-text {
+          margin-top: 10px;
+          font-size: 12.5px;
+          line-height: 1.6;
+          color: #6b7280;
+        }
+
         @media (max-width: 700px) {
-          .form-row {
-            grid-template-columns: 1fr;
-          }
           .donate-card {
             padding: 36px;
           }

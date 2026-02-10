@@ -36,6 +36,11 @@ const Footer = () => {
               <li><Link to="/donate">Donate</Link></li>
               <li><Link to="/about">About</Link></li>
               <li><Link to="/contact">Contact</Link></li>
+
+              {/* ✅ LEGAL LINKS (FOR CRYPTOMUS) */}
+              <li><Link to="/terms">Terms of Use</Link></li>
+              <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+              <li><Link to="/aml">AML Policy</Link></li>
             </ul>
           </div>
 
@@ -53,39 +58,34 @@ const Footer = () => {
         </div>
       </footer>
 
-      
-
       {/* STYLES */}
       <style>{`
         .footer {
           background: linear-gradient(135deg, #5b61f6, #4f46e5);
           color: #ffffff;
-          padding: 10px 10% 10px; /* TOP PADDING FIXED */
-           border-radius: 18px;          /* SAME CURVE AS NAVBAR */
-  
-  padding: 15px 60px 15px;
-  overflow: hidden;
+          padding: 10px 10% 10px;
+          border-radius: 18px;
+          padding: 15px 60px 15px;
+          overflow: hidden;
         }
 
         .footer-container {
           display: grid;
-          grid-template-columns: 1.3fr 1fr 1fr 1fr; /* ONE LINE ALIGNMENT */
+          grid-template-columns: 1.3fr 1fr 1fr 1fr;
           gap: 60px;
           border-bottom: 1px solid rgba(255,255,255,0.25);
           padding-bottom: 45px;
           align-items: flex-start;
-          border-radius: 18px;          /* SAME CURVE AS NAVBAR */
-  background: rgba(255,255,255,0.06);
-  padding: 50px 60px 45px;
-  overflow: hidden;
+          border-radius: 18px;
+          background: rgba(255,255,255,0.06);
+          padding: 50px 60px 45px;
+          overflow: hidden;
         }
 
-        /* BRAND */
         .footer-brand img {
           width: 170px;
         }
 
-        /* HEADINGS */
         .footer-col h4 {
           font-size: 18px;
           font-weight: 600;
@@ -103,7 +103,6 @@ const Footer = () => {
           border-radius: 3px;
         }
 
-        /* LISTS */
         .footer-col ul {
           list-style: none;
           padding: 0;
@@ -126,7 +125,6 @@ const Footer = () => {
           text-decoration: none;
         }
 
-        /* SOCIAL */
         .social-links li {
           display: flex;
           align-items: center;
@@ -142,7 +140,6 @@ const Footer = () => {
           color: #fde047;
         }
 
-        /* COPYRIGHT */
         .footer-bottom {
           background: #4338ca;
           color: #e5e7eb;
@@ -150,13 +147,10 @@ const Footer = () => {
           padding: 14px;
           font-size: 14px;
           letter-spacing: 0.4px;
-           border-radius: 18px;          /* SAME CURVE AS NAVBAR */
- 
-
-  overflow: hidden;
+          border-radius: 18px;
+          overflow: hidden;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 900px) {
           .footer-container {
             grid-template-columns: repeat(2, 1fr);

@@ -18,6 +18,11 @@ import Members from "./components/Members";
 
 import { NotFound } from "./components/NotFound";
 
+/* ✅ NEW LEGAL PAGES */
+import Terms from "./components/TermsOfUse";
+import PrivacyPolicy from "./components/PrivacyPolicy";
+import AML from "./components/AML";
+
 const App = () => {
   return (
     <>
@@ -37,6 +42,10 @@ const App = () => {
         <Route path="/members" element={<Members />} />
         <Route path="/volunteer" element={<Volunteer />} />
 
+        {/* ✅ LEGAL ROUTES (FOR CRYPTOMUS) */}
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/aml" element={<AML />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -6,6 +6,14 @@ import Qualities from "../miniComponents/Qualities";
 const Home = () => {
   return (
     <div className="home">
+
+      {/*
+        CRYPTOMUS / COLLEGE PROJECT DISCLAIMER (FOR CODE REFERENCE ONLY)
+
+        This website is a college project created for educational purposes only.
+        All crypto payments are for testing/demo use and not real donations.
+      */}
+
       <Hero />
       <Members />
       <Qualities />

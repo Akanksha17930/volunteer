@@ -3,7 +3,6 @@ import React from "react";
 const About = () => {
   return (
     <section className="about">
-
       {/* HERO SECTION */}
       <div className="about-hero">
         <div className="about-content">
@@ -15,8 +14,8 @@ const About = () => {
           <p>
             Volunteers is a trusted donation and community platform focused on
             creating real, measurable impact. We connect compassionate people
-            with verified causes, ensuring transparency, accountability, and
-            meaningful change.
+            with causes, ensuring transparency, accountability, and meaningful
+            engagement.
           </p>
         </div>
 
@@ -30,14 +29,23 @@ const About = () => {
         <h2>Our Story</h2>
         <p>
           Volunteers began with a simple idea — that collective kindness can
-          change lives. Over the years, we have supported thousands of
-          individuals and communities through education, healthcare, disaster
-          relief, and empowerment initiatives.
+          create meaningful outcomes. Over time, the platform has focused on
+          supporting community-driven initiatives related to education,
+          healthcare awareness, and social responsibility.
         </p>
         <p>
-          Every project we support is carefully verified and continuously
-          monitored. We believe trust is built through transparency, and impact
-          is achieved through collaboration.
+          Transparency and accountability remain central to our approach, with
+          a strong emphasis on ethical participation and responsible use of
+          digital technologies.
+        </p>
+
+        {/* ✅ REQUIRED CLARIFICATION (CRYPTOMUS SAFE) */}
+        <p>
+          Volunteers operates as an independent digital platform designed to
+          facilitate community support initiatives. The platform does not
+          represent a registered charitable organization, financial institution,
+          or non-profit entity, and all content is provided for informational
+          and demonstration purposes.
         </p>
       </div>
 
@@ -46,24 +54,24 @@ const About = () => {
         <div className="value-card">
           <h3>🌍 Our Mission</h3>
           <p>
-            To enable individuals to support verified causes and create
-            sustainable impact through transparent and accountable giving.
+            To encourage ethical participation and responsible contributions
+            through transparent digital platforms.
           </p>
         </div>
 
         <div className="value-card">
           <h3>🤝 Our Vision</h3>
           <p>
-            A world where kindness is accessible, impactful, and driven by
-            community participation.
+            A world where technology enables trust, awareness, and positive
+            social engagement.
           </p>
         </div>
 
         <div className="value-card">
-          <h3>📈 Our Impact</h3>
+          <h3>📈 Our Focus</h3>
           <p>
-            Thousands of lives supported across education, healthcare, and
-            disaster relief initiatives nationwide.
+            Promoting transparency, education, and responsible innovation in
+            community-driven initiatives.
           </p>
         </div>
       </div>
@@ -75,7 +83,6 @@ const About = () => {
           padding-bottom: 100px;
         }
 
-        /* HERO */
         .about-hero {
           padding: 100px 8%;
           display: grid;
@@ -122,7 +129,6 @@ const About = () => {
           filter: drop-shadow(0 40px 80px rgba(0,0,0,0.2));
         }
 
-        /* STORY */
         .about-story {
           padding: 80px 8% 40px;
           max-width: 900px;
@@ -144,7 +150,6 @@ const About = () => {
           margin-bottom: 18px;
         }
 
-        /* VALUES */
         .about-values {
           padding: 60px 8%;
           display: grid;
@@ -178,7 +183,6 @@ const About = () => {
           line-height: 1.7;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 900px) {
           .about-hero {
             grid-template-columns: 1fr;
