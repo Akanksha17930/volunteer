@@ -94,8 +94,8 @@ const Donate = () => {
           </button>
 
           <p className="note">
-            🔒 Payments are processed securely via a third-party cryptocurrency
-            payment provider.
+          Cryptocurrency donations are facilitated via an external payment service provider.
+          The platform itself does not store or control user funds.
           </p>
 
           <p className="legal-text">
