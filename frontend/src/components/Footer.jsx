@@ -16,7 +16,7 @@ const Footer = () => {
       <div>
         <h4>Support</h4>
         <ul>
-          <li>New York, USA</li>
+          <li>India</li>
           <li>crypto@gmail.com</li>
           <li>+92 123123123</li>
         </ul>
